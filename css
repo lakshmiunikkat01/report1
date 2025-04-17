@@ -1,0 +1,25 @@
+/* Apply a global font style to the entire body */
+body {
+    font-family: 'Arial', sans-serif; /* Use Arial as the primary font, with sans-serif as a fallback */
+}
+
+/* Style for the #home section */
+#home {
+    background-image: url('images/home-bg.jpg'); /* Set a background image for the section */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    color: white; /* Set the text color to white for contrast */
+    padding: 80px 0; /* Add 80px padding at the top and bottom */
+}
+
+/* Style for images inside the #about section */
+#about img {
+    border-radius: 50%; /* Make the image circular by rounding all corners */
+    max-width: 100%; /* Ensure the image scales responsively and doesn’t exceed its container's width */
+}
+
+/* Customize the appearance of modal content */
+.modal-content {
+    background-color: #f9f9f9; /* Set a light gray background color for the modal */
+    color: #333; /* Use a dark gray text color for readability */
+}

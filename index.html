@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport for responsive design -->
+    <title>Student Portfolio</title> <!-- Title of the webpage -->
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS link -->
+   
+</head>
+
+<body>
+    <!-- Navigation Bar In Bootstrap, a navigation bar (navbar) is a responsive and highly customizable component used to create menus for navigating a website -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Navbar with dark background -->
+        <div class="container-fluid"> <!-- Container for navbar content -->
+            <a class="navbar-brand" href="#">My Portfolio</a> <!-- Branding link -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- Navbar toggle icon -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- Collapsible navbar -->
+                <ul class="navbar-nav ms-auto"> <!-- Navbar items aligned to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a> <!-- Home link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a> <!-- About link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a> <!-- Projects link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a> <!-- Skills link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a> <!-- Contact link -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section (Hero)- boostrap A Bootstrap Hero Section is a large UI component built with Bootstrap, typically located at the top of a webpage, designed to grab users' attention with prominent messages. -->
+    <section id="home" class="text-center text-white bg-primary py-5"> <!-- Home section with text centered and primary background -->
+        <div class="container"> <!-- Container for content inside this section -->
+            <h1 class="display-4">Welcome to My Portfolio</h1> <!-- Main heading -->
+            <p class="lead">A passionate student with a love for coding and problem solving.</p> <!-- Introductory text -->
+            <a href="#about" class="btn btn-light">Learn More</a> <!-- Button to scroll to About section -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container py-5"> <!-- About section with container and padding -->
+        <div class="row"> <!-- Row for the grid layout--bootstrap -->
+            <div class="col-md-4 text-center"> <!-- Column for profile image -->
+                <img id="profileImage" src="C:\Users\vtrag\Downloads\student portfolia\images2\user.png" alt="Profile" class="img-fluid rounded-circle"> <!-- Profile image -->
+                <button class="btn btn-secondary mt-3" id="editProfile">Edit Profile</button> <!-- Button to edit profile -->
+                <input type="file" id="profileInput" class="form-control mt-3 d-none"> <!-- Hidden file input for selecting image -->
+            </div>
+            <div class="col-md-8"> <!-- Column for text content -->
+                <h2>About Me</h2> <!-- About me section heading -->
+                <textarea id="aboutText" class="form-control mb-3" rows="5">Hello! I’m Lakshmi Unikkat...</textarea> <!-- Textarea for bio -->
+                <p><strong>Education:</strong> B.Tech in Information Science, MS Ramaiah Bangalore</p> <!-- Education details -->
+                <button class="btn btn-primary" onclick="saveAbout()">Save Changes</button> <!-- Button to save changes in the bio -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light py-5"> <!-- Projects section with light background and padding -->
+        <div class="container"> <!-- Container for projects -->
+            <h2 class="text-center mb-4">My Projects</h2> <!-- Section heading -->
+            <div id="projectContainer" class="row"> <!-- Row for the project cards -->
+                <!-- Project Card 1 -->
+                <div class="col-md-4 mb-4"> <!-- Column for the first project -->
+                    <div class="card"> <!-- Card container -->
+                        <img src="C:\Users\vtrag\Downloads\student portfolia\images2\p1.jpg" class="card-img-top" alt="Project 1"> <!-- Project image -->
+                        <div class="card-body"> <!-- Card body -->
+                            <h5 class="card-title">College Database Management Application</h5> <!-- Project title -->
+                            <p class="card-text">A College Database Management System...</p> <!-- Project description -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="col-md-4 mb-4"> <!-- Column for the second project -->
+                    <div class="card"> <!-- Card container -->
+                        <img src="C:\Users\vtrag\Downloads\student portfolia\images2\p2.jpg" class="card-img-top" alt="Project 2"> <!-- Project image -->
+                        <div class="card-body"> <!-- Card body -->
+                            <h5 class="card-title">Restaurant Management System</h5> <!-- Project title -->
+                            <p class="card-text">A Restaurant Management System...</p> <!-- Project description -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Project Button -->
+                <div class="col-md-4 mb-4"> <!-- Column for add project button -->
+                    <button class="btn btn-primary w-100" onclick="addProject()">Add Project</button> <!-- Button to add project -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5"> <!-- Contact section with padding -->
+        <h2 class="text-center mb-4">Contact Me</h2> <!-- Contact heading -->
+        <form id="contactForm"> <!-- Contact form -->
+            <div class="mb-3"> <!-- Form field for name -->
+                <label for="name" class="form-label">Name</label> <!-- Label for name -->
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required> <!-- Input field for name -->
+            </div>
+            <div class="mb-3"> <!-- Form field for email -->
+                <label for="email" class="form-label">Email</label> <!-- Label for email -->
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required> <!-- Input field for email -->
+            </div>
+            <div class="mb-3"> <!-- Form field for message -->
+                <label for="message" class="form-label">Message</label> <!-- Label for message -->
+                <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea> <!-- Textarea for message -->
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button> <!-- Submit button -->
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3"> <!-- Footer with dark background and white text -->
+        <p>&copy; 2025 My Portfolio. All Rights Reserved.</p> <!-- Footer content -->
+    </footer>
+
+    <!-- Bootstrap 5 JS and Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+    <script>
+        function saveAbout() { // Function to save the about section changes
+            const aboutText = document.getElementById('aboutText').value;
+            alert('About section updated: ' + aboutText); // Show an alert with the updated text
+        }
+
+        function addProject() { // Function to add a new project
+            const container = document.getElementById('projectContainer');
+            const title = prompt('Enter Project Title:'); // Prompt for project title
+            const description = prompt('Enter Project Description:'); // Prompt for project description
+            const imgFileInput = document.createElement('input'); // Create an input element for project image
+            imgFileInput.type = 'file'; // Set input type to file
+            imgFileInput.accept = 'image/*'; // Accept image files only
+            imgFileInput.onchange = function(event) { // When a file is selected
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const projectHTML = `<div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${e.target.result}" class="card-img-top" alt="Project Image">
+                            <div class="card-body">
+                                <h5 class="card-title">${title}</h5>
+                                <p class="card-text">${description}</p>
+                            </div>
+                        </div>
+                    </div>`;
+                    container.insertAdjacentHTML('beforeend', projectHTML); // Insert the new project card
+                };
+                reader.readAsDataURL(file); // Read the image as a data URL
+            };
+            imgFileInput.click(); // Trigger file input click
+        }
+
+        document.getElementById('editProfile').addEventListener('click', function() { // Toggle profile input visibility
+            document.getElementById('profileInput').classList.toggle('d-none');
+        });
+
+        document.getElementById('profileInput').addEventListener('change', function(event) { // Handle profile image upload
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result; // Set profile image
+                    alert('Profile image updated!'); // Show alert when image is updated
+                };
+                reader.readAsDataURL(file); // Read the selected file
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) { // Handle contact form submission
+            event.preventDefault(); // Prevent form from submitting
+            alert('Submitted successfully!'); // Show success alert
+        });
+    </script>
+</body>
+
+</html>
